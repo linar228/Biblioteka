@@ -22,7 +22,7 @@ namespace Biblioteka
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Chill chill;
+        private Lib lib;
         private List<string> details = new List<string>();
 
         public MainWindow()
@@ -53,56 +53,81 @@ namespace Biblioteka
 
         private void BookSave_Click(object sender, RoutedEventArgs e)
         {
-            chill = ChillMaker.Make("B", BookNazvanie.Text);
+            lib = LibMaker.Make("B", BookNazvanie.Text);
 
             details.Clear();
             details.Add(BookAutor.Text);
             details.Add(BookIlustrator.Text);
             details.Add(BookIzdatelstvo.Text);
             details.Add(BookYear.Text);
-
-            chill.Save(BookNazvanie.Text, details);
-        }
-
-        private void PazlSave_Click(object sender, RoutedEventArgs e)
-        {
-            chill = ChillMaker.Make("P", BookNazvanie.Text);
-
-            details.Clear();
-            details.Add(PazlElements.Text);
+            details.Add(PazlNazvanie.Text);
+            details.Add(PazlElement.Text);
             details.Add(PazlCompany.Text);
-
-            chill.Save(BookNazvanie.Text, details);
-        }
-
-        private void TableSave_Click(object sender, RoutedEventArgs e)
-        {
-            chill = ChillMaker.Make("T", BookNazvanie.Text);
-
-            details.Clear();
+            details.Add(TableNazvanie.Text);
             details.Add(TableRazrabotchik.Text);
             details.Add(TableGameplay.Text);
             details.Add(TablePlayers.Text);
 
-            chill.Save(BookNazvanie.Text, details);
+            lib.Save(BookNazvanie.Text, details);
+        }
+
+        private void PazlSave_Click(object sender, RoutedEventArgs e)
+        {
+            lib = LibMaker.Make("P", PazlNazvanie.Text);
+
+            details.Clear();
+            details.Add(BookAutor.Text);
+            details.Add(BookIlustrator.Text);
+            details.Add(BookIzdatelstvo.Text);
+            details.Add(BookYear.Text);
+            details.Add(PazlNazvanie.Text);
+            details.Add(PazlElement.Text);
+            details.Add(PazlCompany.Text);
+            details.Add(TableNazvanie.Text);
+            details.Add(TableRazrabotchik.Text);
+            details.Add(TableGameplay.Text);
+            details.Add(TablePlayers.Text);
+
+            lib.Save(PazlNazvanie.Text, details);
+        }
+
+        private void TableSave_Click(object sender, RoutedEventArgs e)
+        {
+            lib = LibMaker.Make("T", TableNazvanie.Text);
+
+            details.Clear();
+            details.Add(BookAutor.Text);
+            details.Add(BookIlustrator.Text);
+            details.Add(BookIzdatelstvo.Text);
+            details.Add(BookYear.Text);
+            details.Add(PazlNazvanie.Text);
+            details.Add(PazlElement.Text);
+            details.Add(PazlCompany.Text);
+            details.Add(TableNazvanie.Text);
+            details.Add(TableRazrabotchik.Text);
+            details.Add(TableGameplay.Text);
+            details.Add(TablePlayers.Text);
+
+            lib.Save(TableNazvanie.Text, details);
         }
 
         private void BookDelete_Click(object sender, RoutedEventArgs e)
         {
-            string path = @"H:\book1.txt";
+            string path = @"H:\book.txt";
             File.Delete(path);
         }
 
         private void PazlDelete_Click(object sender, RoutedEventArgs e)
         {
-            string path = @"H:\pazl1.txt";
+            string path = @"H:\pazl.txt";
             File.Delete(path);
         }
 
         private void TableDelete_Click(object sender, RoutedEventArgs e)
         {
-            string path = @"H:\table1.txt";
+            string path = @"H:\table.txt";
             File.Delete(path);
         }
+
     }
 }

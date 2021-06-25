@@ -7,43 +7,43 @@ using System.IO;
 
 namespace BibliotekaLibrary
 {
-    public static class ChillMaker
+    public static class LibMaker
     {
-        public static Chill Make(string chillCode, string Nazvanie)
+        public static Lib Make(string Code, string Nazvanie)
         {
-            Chill chill = null;
+            Lib lib = null;
 
-            switch (chillCode)
+            switch (Code)
             {
                 case "B":
-                    chill = new Book(Nazvanie);
+                    lib = new Book(Nazvanie);
                     break;
 
                 case "P":
-                    chill = new Pazl(Nazvanie);
+                    lib = new Pazl(Nazvanie);
                     break;
 
                 case "T":
-                    chill = new Table(Nazvanie);
+                    lib = new Table(Nazvanie);
                     break;
             }
-            return chill;
+            return lib;
         }
     }
 
 
-    public abstract class Chill
+    public abstract class Lib
     {
         protected string Nazvanie;
 
-        public Chill(string newNazvanie)
+        public Lib(string newNazvanie)
         {
             Nazvanie = newNazvanie;
         }
         public abstract void Save(string newNazvanie, List<string> details);
     }
 
-    class Book : Chill
+    class Book : Lib
     {
         string bookPath = @"H:\book.txt";
 
@@ -62,7 +62,7 @@ namespace BibliotekaLibrary
         }
     }
 
-    class Pazl : Chill
+    class Pazl : Lib
     {
         string pazlPath = @"H:\pazl.txt";
 
@@ -81,7 +81,7 @@ namespace BibliotekaLibrary
         }
     }
 
-    class Table : Chill
+    class Table : Lib
     {
         string tablePath = @"H:\table.txt";
 

@@ -6,6 +6,13 @@
         xmlns:local="clr-namespace:Biblioteka"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" MinWidth="800" MinHeight="450" MaxWidth="800" MaxHeight="450">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black" Offset="0"/>
+            <GradientStop Color="#FF578F54" Offset="0.393"/>
+            <GradientStop Color="#FF0D0D0D"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
         <Grid HorizontalAlignment="Left" Height="80" Margin="10,10,0,0" VerticalAlignment="Top" Width="772">
             <Button x:Name="BookBtn" Content="Book" HorizontalAlignment="Left" Margin="80,30,0,0" VerticalAlignment="Top" Width="75" Click="BookBtn_Click"/>
@@ -23,10 +30,10 @@
         </Grid>
         <Grid x:Name="PazlGrid" HorizontalAlignment="Left" Height="314" Margin="10,95,0,0" VerticalAlignment="Top" Width="772" Visibility="Hidden">
             <TextBox x:Name="PazlNazvanie" HorizontalAlignment="Left" Height="23" Margin="80,50,0,0" TextWrapping="Wrap" Text="Nazvanie" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="PazlElements" HorizontalAlignment="Left" Height="23" Margin="80,120,0,0" TextWrapping="Wrap" Text="Kol-vo elementov" VerticalAlignment="Top" Width="120"/>
             <TextBox x:Name="PazlCompany" HorizontalAlignment="Left" Height="23" Margin="80,190,0,0" TextWrapping="Wrap" Text="Company-proizvod" VerticalAlignment="Top" Width="120"/>
             <Button x:Name="PazlSave" Content="Save" HorizontalAlignment="Left" Margin="500,150,0,0" VerticalAlignment="Top" Width="75" Click="PazlSave_Click"/>
             <Button x:Name="PazlDelete" Content="Delete" HorizontalAlignment="Left" Margin="650,149,0,0" VerticalAlignment="Top" Width="75" Click="PazlDelete_Click"/>
+            <TextBox x:Name="PazlElement" HorizontalAlignment="Left" Height="23" Margin="80,122,0,0" TextWrapping="Wrap" Text="Kol-vo elementov" VerticalAlignment="Top" Width="120"/>
         </Grid>
         <Grid x:Name="TableGrid" HorizontalAlignment="Left" Height="314" Margin="10,95,0,0" VerticalAlignment="Top" Width="772" Visibility="Hidden">
             <TextBox x:Name="TableNazvanie" HorizontalAlignment="Left" Height="23" Margin="80,50,0,0" TextWrapping="Wrap" Text="Nazvanie" VerticalAlignment="Top" Width="120"/>
