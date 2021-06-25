@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using BibliotekaLibrary;
+using Microsoft.Win32;
 
 namespace Biblioteka
 {
@@ -129,5 +130,47 @@ namespace Biblioteka
             File.Delete(path);
         }
 
+        private void BookOpen_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            
+                StreamReader read = new StreamReader(File.OpenRead(@"H:\book.txt"));
+                BookNazvanie.Text = read.ReadLine();
+                BookAutor.Text = read.ReadLine();
+                BookIlustrator.Text = read.ReadLine();
+                BookIzdatelstvo.Text = read.ReadLine();
+                BookYear.Text = read.ReadLine();
+                PazlNazvanie.Text = read.ReadLine();
+                PazlElement.Text = read.ReadLine();
+                PazlCompany.Text = read.ReadLine();
+                TableNazvanie.Text = read.ReadLine();
+                TableRazrabotchik.Text = read.ReadLine();
+                TableGameplay.Text = read.ReadLine();
+                TablePlayers.Text = read.ReadLine();
+                read.Close();
+                read.Dispose();
+            
+        }
+
+        private void PazlOpen_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+
+            StreamReader read = new StreamReader(File.OpenRead(@"H:\pazl.txt"));
+            BookNazvanie.Text = read.ReadLine();
+            BookAutor.Text = read.ReadLine();
+            BookIlustrator.Text = read.ReadLine();
+            BookIzdatelstvo.Text = read.ReadLine();
+            BookYear.Text = read.ReadLine();
+            PazlNazvanie.Text = read.ReadLine();
+            PazlElement.Text = read.ReadLine();
+            PazlCompany.Text = read.ReadLine();
+            TableNazvanie.Text = read.ReadLine();
+            TableRazrabotchik.Text = read.ReadLine();
+            TableGameplay.Text = read.ReadLine();
+            TablePlayers.Text = read.ReadLine();
+            read.Close();
+            read.Dispose();
+        }
     }
 }
